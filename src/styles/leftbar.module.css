@@ -1,0 +1,26 @@
+.leftBox {
+  flex-basis: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  font-size: 1vw;
+}
+.leftBox .subLeftBox {
+  cursor: pointer;
+  padding: 10px;
+}
+.leftBox img {
+  width: 2.5vw;
+  height: 2.5vw;
+}
+.active {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+}
+.inactive {
+  text-decoration: none;
+  color: #757575;
+}

@@ -1,0 +1,45 @@
+:root {
+  --secondColor: rgb(231, 167, 17);
+}
+
+#welcomeIcon img {
+  width: 28vw;
+  min-width: 35vh;
+}
+
+#appTitle {
+  text-align: center;
+}
+
+#appTitle span {
+  font-size: 4.7vw;
+}
+#appTitle span:nth-child(2) {
+  color: var(--secondColor);
+  font-weight: bold;
+}
+#appTitle p {
+  margin-top: 10px;
+  font-size: 1.2vw;
+}
+#account span {
+  color: blue;
+  margin: 0 10px;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+}
+@media (max-width: 1200px) {
+  #appTitle span {
+    font-size: 5vh;
+  }
+
+  #appTitle p {
+    font-size: 2vh;
+  }
+
+  #startBtn {
+    font-size: 1.5vh;
+    padding: 1.5vh 2vh;
+    border-radius: 3vh;
+  }
+}

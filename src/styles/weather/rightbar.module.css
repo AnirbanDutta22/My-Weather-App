@@ -1,0 +1,31 @@
+.endBox {
+  height: 100%;
+  font-size: 1vw;
+}
+.subBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+}
+.subBox .forecasts {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+.subBox .forecasts .info {
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.subBox .forecasts img {
+  width: 2.5vw;
+  height: 2.5vw;
+  margin-right: 10px;
+}
+
+.subBox .forecasts span {
+  color: #000;
+}

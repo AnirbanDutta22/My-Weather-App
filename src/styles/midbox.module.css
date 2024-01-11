@@ -1,0 +1,17 @@
+.midBox {
+  flex-grow: 1;
+
+  display: flex;
+  font-size: 1vw;
+  font-family: "Archivo", "sans-serif";
+}
+.searchBox {
+  border-radius: 16px;
+}
+.searchBox input {
+  width: 100%;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding: 5px;
+}

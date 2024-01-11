@@ -1,0 +1,27 @@
+.forecast {
+  margin-bottom: 30px;
+  padding: 20px;
+}
+.forecast .subforecast {
+  display: flex;
+  justify-content: space-around;
+}
+.forecast .subforecast .forecasts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  text-transform: uppercase;
+}
+.forecast .subforecast .forecasts p {
+  margin-top: 10px;
+}
+.forecast .subforecast .forecasts p:last-child {
+  font-size: 1.5vw;
+}
+.forecast .subforecast .forecasts img {
+  width: 3vw;
+  height: 3vw;
+}

@@ -1,0 +1,32 @@
+.subBox3 {
+  flex-basis: 45%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.subBox3 .air_info {
+  padding: 20px;
+  display: inline-grid;
+  grid-template-columns: auto auto auto;
+  gap: 20px 0;
+  justify-content: baseline;
+  align-items: center;
+  flex-grow: 1;
+}
+.subBox3 .air_info .infos {
+  display: flex;
+  justify-content: flex-start;
+}
+.subBox3 .air_info img {
+  width: 1.2vw;
+  height: 1.2vw;
+  margin-right: 10px;
+  filter: grayscale(100%);
+}
+
+.subBox3 .air_info p {
+  font-size: 1.6vw;
+  color: #000;
+  text-transform: lowercase;
+}

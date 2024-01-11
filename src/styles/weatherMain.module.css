@@ -1,0 +1,6 @@
+.main {
+  display: flex;
+  padding: 30px;
+  height: 100vh;
+  text-transform: capitalize;
+}

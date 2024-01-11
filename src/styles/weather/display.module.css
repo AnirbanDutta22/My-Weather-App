@@ -1,0 +1,32 @@
+.subBox2 {
+  flex-basis: 30%;
+
+  margin-left: 30px;
+  padding: 4vw;
+  display: flex;
+  justify-content: space-between;
+}
+.subBox2 .heading1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+}
+.subBox2 .heading1 h1 {
+  color: #000;
+  font-size: 2.5vw;
+  margin-bottom: 10px;
+}
+.subBox2 .heading1 .temp {
+  color: #000;
+  font-size: 3.4vw;
+}
+.subBox2 .heading2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.subBox2 .heading2 img {
+  width: 8vw;
+  height: 8vw;
+}
