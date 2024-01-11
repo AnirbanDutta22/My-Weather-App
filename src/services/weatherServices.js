@@ -1,7 +1,5 @@
-const API_KEY = "e8fb14e1e22c3d4d2186c7429a3bfafb"; //160c440c37e93ad356aaafce6b20daac
-const BASE_URL = "https://api.openweathermap.org/data/2.5";
-
-//https://api.openweathermap.org/data/2.5/weather?q={city name}&appid=e8fb14e1e22c3d4d2186c7429a3bfafb
+const API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const BASE_URL = process.env.REACT_APP_WEATHER_API_URL;
 
 const getWeatherData = (infoType, searchParams) => {
   const url = new URL(BASE_URL + "/" + infoType);
