@@ -1,7 +1,7 @@
 #startBtn {
   font-size: 1vw;
   padding: 1vw 1.8vw;
-  border-radius: 3vw;
+  border-radius: 16px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.134);
   background-color: var(--secondColor);
   cursor: pointer;

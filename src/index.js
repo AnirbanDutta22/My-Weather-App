@@ -5,9 +5,12 @@ import App from "./components/App";
 import Cities from "./components/Cities/Cities";
 import Map from "./components/Map/Map";
 import Settings from "./components/SettingsPage/Settings";
+import Dashboard from "./components/UserAccount/Dashboard";
+import SignIn from "./components/UserAccount/SignIn";
+import SignUp from "./components/UserAccount/SignUp";
 import WeatherPage from "./components/WeatherPage";
 import Weather from "./components/WeatherSection/Weather";
-
+import Authprovider from "./contexts/AuthContext";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,14 +39,24 @@ const router = createBrowserRouter([
     ],
   },
   {
-    path: "/user",
-    element: <div>hello user</div>,
+    path: "/Dashboard",
+    element: <Dashboard />,
+  },
+  {
+    path: "/SignIn",
+    element: <SignIn />,
+  },
+  {
+    path: "/SignUp",
+    element: <SignUp />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Authprovider>
+      <RouterProvider router={router} />
+    </Authprovider>
   </React.StrictMode>
 );

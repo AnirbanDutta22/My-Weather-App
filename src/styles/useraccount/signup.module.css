@@ -1,0 +1,51 @@
+.container {
+  width: 100vw;
+  height: 100vh;
+  margin: auto;
+  background-color: #4ec9f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .subContainer {
+  width: 90%;
+  height: 90%;
+  display: flex;
+  justify-content: space-evenly;
+  /* background-color: #fff; */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.container .subContainer .signBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+.container .subContainer .elements {
+  margin-bottom: 20px;
+  width: 100%;
+}
+.container .elements:first-child span {
+  font-size: 2vw;
+}
+.container .subContainer .elements input {
+  width: 20vw;
+  padding: 20px;
+  outline: none;
+  border: 0.5px solid transparent;
+  border-radius: 20px;
+}
+
+.imgClass {
+  display: flex;
+  align-items: center;
+}
+.container img {
+  width: 40vw;
+  height: 40vw;
+}

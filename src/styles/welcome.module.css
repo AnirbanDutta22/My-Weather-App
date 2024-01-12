@@ -5,6 +5,7 @@
 #welcomeIcon img {
   width: 28vw;
   min-width: 35vh;
+  height: 28vw;
 }
 
 #appTitle {

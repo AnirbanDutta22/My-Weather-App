@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
+import { Outlet } from "react-router-dom";
 import getFormattedData from "../services/weatherServices";
 import ids from "../styles/midbox.module.css";
 import classes from "../styles/weatherMain.module.css";
 import LeftBar from "./LeftBar";
-// import MidBox from "./MidBox";
-import { Outlet } from "react-router-dom";
 
 export const MyContext1 = React.createContext();
 export const MyContext2 = React.createContext();
@@ -16,12 +15,14 @@ export default function WeatherPage() {
   const [weather, setWeather] = useState(null);
   const [weather2, setWeather2] = useState(null);
   const [cityList, setCityList] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
         await getFormattedData({ ...city }).then((data) => {
           setWeather(data);
+          setIsLoading(false);
         });
       } catch (error) {
         window.alert("City not found");
@@ -36,7 +37,7 @@ export default function WeatherPage() {
         await getFormattedData({ ...city2 }).then((data2) => {
           setWeather2(data2);
           setCityList([data2, ...cityList]);
-          console.log(cityList);
+          setIsLoading(false);
         });
       } catch (error) {
         window.alert("City not found");
@@ -47,6 +48,7 @@ export default function WeatherPage() {
 
   return (
     <div className={`${classes.main}`}>
+      {isLoading ? <div className={classes.loading}>Loading...</div> : null}
       {weather && (
         <>
           <MyContext1.Provider value={weather}>

@@ -1,4 +1,4 @@
-import { Heading1, Heading2, SubBox2 } from "./styled/DisplayContainer.styled";
+import { Heading1, Heading2, SubBox2 } from "../styled/DisplayContainer.styled";
 
 export default function WeatherDisplay(props) {
   return (
