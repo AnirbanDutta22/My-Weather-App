@@ -1,12 +1,6 @@
-.midBox {
-  flex-grow: 1;
-
-  display: flex;
-  font-size: 1vw;
-  font-family: "Archivo", "sans-serif";
-}
 .searchBox {
   border-radius: 16px;
+  height: max-content;
 }
 .searchBox input {
   width: 100%;

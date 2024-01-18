@@ -1,39 +1,46 @@
+import { useContext } from "react";
 import { useOutletContext } from "react-router-dom";
 import { iconForWeather } from "../../services/weatherServices";
+import utils from "../../styles/utilities.module.css";
 import classes from "../../styles/weather/weather.module.css";
 import SearchBar from "../SearchBar";
-import { MyContext1 } from "../WeatherPage";
+import Template from "../Template";
+import { ContextCity1 } from "../WeatherPage";
 import ForecastDisplay from "./ForecastDisplay";
 import RightBar from "./RightBar";
 import WeatherDisplay from "./WeatherDisplay";
 import WeatherInfo from "./WeatherInfo";
-
 export default function Weather() {
-  const [setCity, setCity2] = useOutletContext();
-  // const { weather1 } = useContext(MyContext1);
+  const [setCity] = useOutletContext();
+  const city1Weather = useContext(ContextCity1);
 
   return (
-    <MyContext1.Consumer>
-      {(weather1) => (
+    <Template
+      left={
         <>
-          <div className={classes.midSection}>
-            <div className={classes.leftbar}>
-              <SearchBar setCity={setCity} />
-              <WeatherDisplay
-                name={`${weather1.name}`}
-                description={`${weather1.description}`}
-                img={`${iconForWeather(weather1.icon)}`}
-                temp={`${weather1.temp.toFixed()}`}
-              />
-              <ForecastDisplay />
-              <WeatherInfo />
-            </div>
-            <div className={classes.rightbar}>
-              <RightBar />
+          <SearchBar setCity={setCity} />
+          <div className={classes.displayContainer}>
+            <WeatherDisplay
+              padd="0px"
+              name={`${city1Weather.name}`}
+              description={`${city1Weather.description}`}
+              img={`${iconForWeather(city1Weather.icon)}`}
+              temp={`${city1Weather.temp.toFixed()}`}
+            />
+            <div className={`${utils.flexbox} ${classes.smallBox}`}>
+              <span>Sunrise</span>
+              <span>Sunset</span>
             </div>
           </div>
+          <ForecastDisplay />
+          <WeatherInfo />
         </>
-      )}
-    </MyContext1.Consumer>
+      }
+      right={
+        <>
+          <RightBar />
+        </>
+      }
+    />
   );
 }

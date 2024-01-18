@@ -8,6 +8,8 @@ export const SubBox2 = styled.div`
   justify-content: space-between;
   border-radius: ${(props) => props.brad};
   background-color: ${(props) => props.bg};
+  box-shadow: ${(props) => props.shadow};
+  flex-basis: 70%;
 `;
 
 export const Heading1 = styled.div`
@@ -16,15 +18,15 @@ export const Heading1 = styled.div`
   justify-content: space-between;
   align-items: ${(props) => props.align};
   flex-basis: ${(props) => props.flexb};
+  /* box-shadow: inset 0 10px rgba(0, 0, 0, 0.1); */
   & h1 {
-    color: #000;
+    color: var(--main_color2);
     font-size: 2.5vw;
   }
   & p {
-    display: ${(props) => props.descr};
+    text-transform: uppercase;
   }
   & .temp {
-    color: #000;
     font-size: ${(props) => props.fsize};
     margin-top: ${(props) => props.tempmargin};
   }

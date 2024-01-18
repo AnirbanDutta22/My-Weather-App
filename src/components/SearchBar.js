@@ -1,8 +1,8 @@
 import { useState } from "react";
-import classes from "../styles/midbox.module.css";
+import classes from "../styles/searchbar.module.css";
 import utils from "../styles/utilities.module.css";
 
-export default function SearchBar({ setCity, setList, cityList }) {
+export default function SearchBar({ setCity }) {
   const [searchCity, setSerachCity] = useState("");
 
   const handleSearchCity = (e) => {

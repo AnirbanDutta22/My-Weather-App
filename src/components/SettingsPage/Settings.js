@@ -1,3 +1,15 @@
+import Template from "../Template";
+import MainSettings from "./MainSettings";
+
 export default function Settings() {
-  return <>Hello settings</>;
+  return (
+    <Template
+      left={
+        <>
+          <MainSettings />
+        </>
+      }
+      right=""
+    />
+  );
 }

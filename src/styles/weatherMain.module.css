@@ -3,8 +3,9 @@
   padding: 30px;
   height: 100vh;
   text-transform: capitalize;
+  font-family: "Archivo", "sans-serif";
+  background-color: var(--main_bg);
 }
-
 .loading {
   font-size: 2.5vw;
   position: absolute;

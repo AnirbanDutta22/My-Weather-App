@@ -30,7 +30,7 @@ export default function SignUpForm() {
       setEmail("");
       setPass("");
       setConfirmPass("");
-      navigate("/WeatherPage/Weather");
+      navigate("/weatherPage/weather");
     } catch (error) {
       console.log(error);
       setUserName("");
@@ -47,6 +47,7 @@ export default function SignUpForm() {
       <SignInputs>
         <span>Sign up</span>
       </SignInputs>
+
       <SignInputs>
         <input
           type="text"
@@ -74,6 +75,7 @@ export default function SignUpForm() {
           onChange={(e) => setPass(e.currentTarget.value)}
         />
       </SignInputs>
+
       <SignInputs>
         <input
           type="password"
@@ -91,6 +93,7 @@ export default function SignUpForm() {
           padd="16px 25px"
           transform="none"
           hover_box_shadow="none"
+          width="100%"
           disabled={isLoading}
           type="submit"
         />
@@ -104,7 +107,7 @@ export default function SignUpForm() {
       )}
       <SignInputs>
         <span>Already have an account ? </span>
-        <Link to="/SignIn">
+        <Link to="/signin">
           <span>Sign in</span>
         </Link>
       </SignInputs>

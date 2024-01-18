@@ -3,6 +3,18 @@
   display: flex;
   justify-content: space-between;
   margin-top: 20px;
+  position: relative;
+}
+.forecasts::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  /* top: 0; */
+  right: 0;
+  bottom: -10px;
+  height: 1px;
+  background-color: var(--main_bg);
 }
 .forecasts .info {
   text-align: center;
@@ -16,5 +28,5 @@
 }
 
 .forecasts span {
-  color: #000;
+  color: var(--main_text);
 }

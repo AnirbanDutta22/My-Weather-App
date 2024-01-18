@@ -22,7 +22,7 @@ export default function SignUpForm() {
       await signin(email, pass);
       setEmail("");
       setPass("");
-      navigate("/WeatherPage/Weather");
+      navigate("/weatherPage/weather");
     } catch (error) {
       console.log(error);
       setEmail("");
@@ -60,6 +60,7 @@ export default function SignUpForm() {
           padd="16px 25px"
           transform="none"
           hover_box_shadow="none"
+          width="100%"
           type="submit"
         />
       </SignInputs>
@@ -72,7 +73,7 @@ export default function SignUpForm() {
       )}
       <SignInputs>
         <span>Account not created yet ? </span>
-        <Link to="/SignUp">
+        <Link to="/signup">
           <span>Sign up</span>
         </Link>
       </SignInputs>

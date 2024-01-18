@@ -1,5 +1,16 @@
-:root {
-  --secondColor: rgb(231, 167, 17);
+.bgClass {
+  background-color: var(--main_bg);
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.height {
+  height: 100vh;
+  overflow-y: hidden;
 }
 
 #welcomeIcon img {
@@ -16,7 +27,7 @@
   font-size: 4.7vw;
 }
 #appTitle span:nth-child(2) {
-  color: var(--secondColor);
+  color: var(--main_color);
   font-weight: bold;
 }
 #appTitle p {

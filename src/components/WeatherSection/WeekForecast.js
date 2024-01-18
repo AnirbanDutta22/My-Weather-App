@@ -1,4 +1,3 @@
-// import weatherIcon from "../../assets/icons/cloudy2.png";
 import classes from "../../styles/weather/weekforecast.module.css";
 
 export default function WeekForecast(props) {

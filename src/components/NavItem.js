@@ -1,13 +1,12 @@
-import MaterialIcon from "material-icons-react";
 import { NavLink } from "react-router-dom";
 import classes from "../styles/leftbar.module.css";
 
 export default function NavItem(props) {
   return (
     <>
-      <div className={classes.subLeftBox}>
+      <div className={classes.navitems}>
         <NavLink
-          to={`/WeatherPage/${props.pageURL}`}
+          to={`/weatherpage/${props.pageURL}`}
           className={({ isActive }) =>
             isActive ? classes.active : classes.inactive
           }
@@ -15,21 +14,13 @@ export default function NavItem(props) {
           {({ isActive }) => {
             return isActive ? (
               <>
-                <MaterialIcon
-                  icon={props.iconName}
-                  size="medium"
-                  color="#757575"
-                />
+                <i className={`fa-solid fa-${props.iconName}`}></i>
                 <br />
                 <span>{props.title}</span>
               </>
             ) : (
               <>
-                <MaterialIcon
-                  icon={props.iconName}
-                  size="medium"
-                  color="#000000"
-                />
+                <i className={`fa-solid fa-${props.iconName}`}></i>
                 <br />
                 <span>{props.title}</span>
               </>

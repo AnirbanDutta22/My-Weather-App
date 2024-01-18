@@ -4,3 +4,23 @@
   box-sizing: border-box;
   font-family: "Archivo", sans-serif;
 }
+:root {
+  --main_color: #fe7a36; /*#eb491c; */
+  --main_color2: #280274; /*#0cadfd;*/
+  --main_color3: #3652ad;
+  --main_text: #000;
+  --second_text: #757575;
+  --main_bg: #e9f6ff; /*rgba(197, 194, 194, 0.729);*/
+  --navlink_bg: #a9baf2;
+}
+
+.highlight {
+  font-weight: 600;
+  color: var(--main_color2);
+}
+
+.border {
+  flex-grow: 1;
+  border-radius: 20px;
+  margin-top: 30px;
+}

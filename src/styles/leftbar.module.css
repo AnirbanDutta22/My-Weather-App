@@ -2,25 +2,47 @@
   flex-basis: 5%;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   text-align: center;
   font-size: 1vw;
+  margin-left: 0;
+  padding: 0;
 }
-.leftBox .subLeftBox {
+.leftBox .subLeftBox1,
+.leftBox .subLeftBox2 {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.leftBox .subLeftBox1 {
+  flex-basis: 50%;
+  justify-content: space-between;
+}
+.leftBox .subLeftBox2 {
+  flex-basis: 20%;
+  justify-content: space-evenly;
+}
+.leftBox .navitems {
   cursor: pointer;
   padding: 10px;
+  border-right: 10px solid transparent;
+  border-left: 10px solid transparent;
+  transition: 0.3s all ease;
 }
-.leftBox img {
-  width: 2.5vw;
-  height: 2.5vw;
+.leftBox .navitems:has(.active) {
+  background-color: var(--main_bg);
+  box-shadow: inset 5px 0px var(--main_color3);
+  border-left: 10px solid #fff;
 }
 .active {
   text-decoration: none;
-  color: #000;
+  color: var(--main_color2);
   font-weight: 500;
 }
 .inactive {
   text-decoration: none;
-  color: #757575;
+  color: var(--main_text);
 }

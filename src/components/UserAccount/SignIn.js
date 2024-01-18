@@ -1,4 +1,4 @@
-import signImg from "../../assets/images/signImg.png";
+import signImg from "../../assets/images/signImg3.png";
 import classes from "../../styles/useraccount/signup.module.css";
 import SignInForm from "../SignInForm";
 

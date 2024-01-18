@@ -3,7 +3,13 @@ import { Heading1, Heading2, SubBox2 } from "../styled/DisplayContainer.styled";
 export default function WeatherDisplay(props) {
   return (
     <>
-      <SubBox2 brad={props.brad} bg={props.bg} ml={props.ml} padd={props.padd}>
+      <SubBox2
+        brad={props.brad}
+        bg={props.bg}
+        ml={props.ml}
+        padd={props.padd}
+        shadow={props.shadow}
+      >
         <Heading1
           flexd={props.flexd}
           align={props.align}

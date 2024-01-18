@@ -1,42 +1,36 @@
-import { getAuth } from "firebase/auth";
-import MaterialIcon from "material-icons-react";
-import { NavLink } from "react-router-dom";
-import welcomeIcon from "../assets/images/welcomeImage.png";
+import welcomeIcon from "../assets/images/welcomeImage4.png";
+import { useAuth } from "../contexts/AuthContext";
 import classes from "../styles/leftbar.module.css";
 import utils from "../styles/utilities.module.css";
 import NavItem from "./NavItem";
+import { Logo } from "./styled/Logo.styled";
 
 export default function LeftBar() {
-  const { currentUser } = getAuth();
+  const { currentUser } = useAuth();
 
   return (
     <div className={`${classes.leftBox} ${utils.flexbox}`}>
-      <div className={classes.subLeftBox}>
-        <NavLink to={currentUser ? "/Dashboard" : "/"}>
+      <div className={classes.subLeftBox1}>
+        <Logo to={currentUser ? "/dashboard" : "/"}>
           <img src={welcomeIcon} alt="welcome" />
-        </NavLink>
+        </Logo>
+        <NavItem pageURL="weather" iconName="cloud" />
+        <NavItem pageURL="cities" iconName="list" />
+        <NavItem pageURL="map" iconName="location-dot" />
+        <NavItem pageURL="settings" iconName="gear" />
       </div>
-      <NavItem pageURL="Weather" iconName="cloud" title="weather" />
-      <NavItem pageURL="Cities" iconName="list" title="cities" />
-      <NavItem pageURL="Map" iconName="location_on" title="map" />
-      <NavItem pageURL="Settings" iconName="tune" title="settings" />
-      <div className={classes.subLeftBox}>
+      <div className={classes.subLeftBox2}>
         {currentUser ? (
-          <>
-            <NavLink to="/Dashboard">
-              <MaterialIcon icon="account_circle" size="medium" />
-              <br />
-              <span>{currentUser.displayName}</span>
-            </NavLink>
-          </>
+          <NavItem pageURL="../dashboard/notifications" iconName="bell" />
+        ) : null}
+        {currentUser ? (
+          <NavItem
+            pageURL="../user/settings"
+            iconName="user"
+            title={currentUser.displayName}
+          />
         ) : (
-          <>
-            <NavLink to="/SignUp">
-              <MaterialIcon icon="account_circle" size="medium" />
-              <br />
-              <span>You</span>
-            </NavLink>
-          </>
+          <NavItem pageURL="../signup" iconName="user" title="you" />
         )}
       </div>
     </div>

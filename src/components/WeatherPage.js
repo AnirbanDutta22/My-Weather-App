@@ -1,27 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
 import getFormattedData from "../services/weatherServices";
-import ids from "../styles/midbox.module.css";
 import classes from "../styles/weatherMain.module.css";
 import LeftBar from "./LeftBar";
 
-export const MyContext1 = React.createContext();
-export const MyContext2 = React.createContext();
-export const MyContext3 = React.createContext();
+export const ContextCity1 = React.createContext();
+export const ContextCity2 = React.createContext();
+export const ContextCity3 = React.createContext();
+export const ContextCityList = React.createContext();
 
 export default function WeatherPage() {
-  const [city, setCity] = useState({ q: "london" });
+  const [city1, setCity1] = useState({ q: "london" });
+  const [city1Weather, setCity1Weather] = useState(null);
   const [city2, setCity2] = useState({ q: "berlin" });
-  const [weather, setWeather] = useState(null);
-  const [weather2, setWeather2] = useState(null);
-  const [cityList, setCityList] = useState([]);
+  const [city2List, setCity2List] = useState([]);
+  const [city2Weather, setCity2Weather] = useState(null);
+  const [city3, setCity3] = useState({ q: "delhi" });
+  const [city3List, setCity3List] = useState([]);
+  const [city3Weather, setCity3Weather] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchWeather = async () => {
       try {
-        await getFormattedData({ ...city }).then((data) => {
-          setWeather(data);
+        await getFormattedData({ ...city1 }).then((data) => {
+          setCity1Weather(data);
           setIsLoading(false);
         });
       } catch (error) {
@@ -29,14 +32,14 @@ export default function WeatherPage() {
       }
     };
     fetchWeather();
-  }, [city]);
+  }, [city1]);
 
   useEffect(() => {
     const fetchWeather2 = async () => {
       try {
         await getFormattedData({ ...city2 }).then((data2) => {
-          setWeather2(data2);
-          setCityList([data2, ...cityList]);
+          setCity2Weather(data2);
+          setCity2List([data2, ...city2List]);
           setIsLoading(false);
         });
       } catch (error) {
@@ -46,21 +49,40 @@ export default function WeatherPage() {
     fetchWeather2();
   }, [city2]);
 
+  useEffect(() => {
+    const fetchWeather3 = async () => {
+      try {
+        await getFormattedData({ ...city3 }).then((data3) => {
+          setCity3Weather(data3);
+          setCity3List([data3, ...city3List]);
+          setIsLoading(false);
+        });
+      } catch (error) {
+        window.alert("City not found");
+      }
+    };
+    fetchWeather3();
+  }, [city3]);
+
   return (
     <div className={`${classes.main}`}>
       {isLoading ? <div className={classes.loading}>Loading...</div> : null}
-      {weather && (
+      {city1Weather && (
         <>
-          <MyContext1.Provider value={weather}>
-            <MyContext2.Provider value={weather2}>
-              <MyContext3.Provider value={cityList}>
-                <LeftBar />
-                <div className={ids.midBox}>
-                  <Outlet context={[setCity, setCity2]} />
-                </div>
-              </MyContext3.Provider>
-            </MyContext2.Provider>
-          </MyContext1.Provider>
+          <ContextCity1.Provider value={city1Weather}>
+            <ContextCity2.Provider value={city2Weather}>
+              <ContextCity3.Provider value={city3Weather}>
+                <ContextCityList.Provider value={{ city2List, city3List }}>
+                  <LeftBar />
+                  <div
+                    style={{ flexGrow: "1", display: "flex", fontSize: "1vw" }}
+                  >
+                    <Outlet context={[setCity1, setCity2, setCity3]} />
+                  </div>
+                </ContextCityList.Provider>
+              </ContextCity3.Provider>
+            </ContextCity2.Provider>
+          </ContextCity1.Provider>
         </>
       )}
     </div>
