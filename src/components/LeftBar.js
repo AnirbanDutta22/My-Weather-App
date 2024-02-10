@@ -30,7 +30,7 @@ export default function LeftBar() {
             title={currentUser.displayName}
           />
         ) : (
-          <NavItem pageURL="../signup" iconName="user" title="you" />
+          <NavItem pageURL="../signin" iconName="user" title="you" />
         )}
       </div>
     </div>

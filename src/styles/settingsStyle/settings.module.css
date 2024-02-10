@@ -1,19 +1,36 @@
 .settingsContainer {
   flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow-y: scroll;
 }
 ::-webkit-scrollbar {
   width: 0px;
 }
-.settingsContainer .subSettings {
-  margin-top: 20px;
+.settingsContainer > div {
   margin-bottom: 20px;
+}
+.settingsContainer .subSettings {
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+.settingsContainer > div:nth-child(1) .subSettings::before {
+  content: "Units";
+  font-size: 1vw;
+  font-weight: 600;
+  color: var(--main_color2);
+}
+.settingsContainer > div:nth-child(2) .subSettings::before {
+  content: "Notifications";
+  font-size: 1vw;
+  font-weight: 600;
+  color: var(--main_color2);
+}
+.settingsContainer > div:nth-last-child(1) .subSettings::before {
+  content: "General";
+  font-size: 1vw;
+  font-weight: 600;
+  color: var(--main_color2);
 }
 .settingsContainer .subSettings > div {
   padding: 10px;
@@ -21,15 +38,10 @@
 .settingsContainer .subSettings .settingsBtns {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  padding: 10px 0 10px 0;
 }
 .settingsContainer .subSettings .settingsBtns button {
   flex-basis: 50%;
-  margin: 0 10px 20px 0;
-  border-radius: 20px;
-  padding: 10px;
-  border: none;
-  cursor: pointer;
 }
 
 .container {
@@ -43,9 +55,12 @@
   display: block;
   position: absolute;
   left: 0;
-  /* top: 0; */
   right: 0;
   bottom: 0;
   height: 1px;
   background-color: var(--main_bg);
+}
+.container p {
+  font-size: 15px;
+  color: var(--second_text);
 }

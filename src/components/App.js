@@ -1,6 +1,4 @@
 import React from "react";
-import "../styles/global.css";
-// import Home from "./Home";
 import {
   Navigate,
   Route,
@@ -8,14 +6,14 @@ import {
   Routes,
 } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import Cities from "./Cities/Cities";
-import Error from "./Error";
-import Map from "./Map/Map";
-import Settings from "./SettingsPage/Settings";
-import Dashboard from "./UserAccount/Dashboard";
-import SignIn from "./UserAccount/SignIn";
-import SignUp from "./UserAccount/SignUp";
-import User from "./UserAccount/User";
+import "../styles/global.css";
+import Cities from "./CitiesSection/Cities";
+import Map from "./MapSection/Map";
+import Settings from "./SettingsSection/Settings";
+import Dashboard from "./UserSection/Dashboard";
+import SignIn from "./UserSection/SignIn";
+import SignUp from "./UserSection/SignUp";
+import User from "./UserSection/User";
 import WeatherPage from "./WeatherPage";
 import Weather from "./WeatherSection/Weather";
 import Welcome from "./Welcome";
@@ -39,7 +37,11 @@ export default function App() {
             }
           />
           <Route exact path="/weatherpage" element={<WeatherPage />}>
-            <Route exact path="" element={<Error />} />
+            <Route
+              exact
+              path=""
+              element={<Navigate to="/weatherpage/weather" />}
+            />
             <Route exact path="/weatherpage/weather" element={<Weather />} />
             <Route exact path="/weatherpage/cities" element={<Cities />} />
             <Route exact path="/weatherpage/map" element={<Map />} />

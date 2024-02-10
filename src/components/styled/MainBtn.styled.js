@@ -7,11 +7,12 @@ export const MainButton = styled.button`
   box-shadow: ${(props) => props.box_shadow};
   background-color: ${(props) => props.btnBg};
   cursor: pointer;
-  transition: 0.5s ease-in-out;
+  transition: 0.3s ease;
   width: ${(props) => props.width};
   text-align: center;
   border: none;
   color: ${(props) => props.color};
+  margin: ${(props) => props.margin};
 
   &:hover {
     transform: ${(props) => props.transform};

@@ -17,6 +17,9 @@ export default function WeatherDisplay(props) {
           tempmargin={props.tempmargin}
           fsize={props.fsize}
           descr={props.descr}
+          h1color={props.h1color}
+          pcolor={props.pcolor}
+          tempcolor={props.tempcolor}
         >
           <div>
             <h1>{props.name}</h1>

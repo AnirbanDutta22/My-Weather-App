@@ -1,32 +1,28 @@
 import moment from "moment";
-import { useContext } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useWeather3 } from "../../contexts/WeatherContext";
 import { iconForWeather } from "../../services/weatherServices";
 import SearchBar from "../SearchBar";
 import Template from "../Template";
-import { ContextCity3, ContextCityList } from "../WeatherPage";
 import WeatherDisplay from "../WeatherSection/WeatherDisplay";
 import MapContainer from "./MapContainer";
 export default function Map() {
-  const [setCity1, setCity2, setCity3] = useOutletContext();
-  const city3Weather = useContext(ContextCity3);
-  const { city3List } = useContext(ContextCityList);
+  const { cityWeather, setCity, cityList } = useWeather3();
 
   const cood = {
-    lat: city3Weather.lat,
-    lng: city3Weather.lon,
+    lat: cityWeather.lat,
+    lng: cityWeather.lon,
   };
   return (
     <Template
       left={
         <>
-          <SearchBar setCity={setCity3} />
+          <SearchBar setCity={setCity} />
           <MapContainer cood={cood} />
         </>
       }
       right={
         <>
-          {city3List.slice(0, 5).map((items) => (
+          {cityList.slice(0, 5).map((items, ind) => (
             <WeatherDisplay
               flexd="row"
               align="center"
@@ -41,6 +37,7 @@ export default function Map() {
               description={`${moment(items.dt).format("HH:mm a")}`}
               img={`${iconForWeather(items.icon)}`}
               temp={`${items.temp.toFixed()}`}
+              key={ind}
             />
           ))}
         </>

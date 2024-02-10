@@ -8,6 +8,7 @@
   font-size: 1vw;
   margin-left: 0;
   padding: 0;
+  background-color: var(--main_color3);
 }
 .leftBox .subLeftBox1,
 .leftBox .subLeftBox2 {
@@ -34,8 +35,8 @@
 }
 .leftBox .navitems:has(.active) {
   background-color: var(--main_bg);
-  box-shadow: inset 5px 0px var(--main_color3);
-  border-left: 10px solid #fff;
+  box-shadow: inset 5px 0px var(--main_color2);
+  border-left: 10px solid var(--main_color3);
 }
 .active {
   text-decoration: none;
@@ -44,5 +45,5 @@
 }
 .inactive {
   text-decoration: none;
-  color: var(--main_text);
+  color: var(--navlink_bg);
 }

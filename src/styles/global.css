@@ -10,8 +10,8 @@
   --main_color3: #3652ad;
   --main_text: #000;
   --second_text: #757575;
-  --main_bg: #e9f6ff; /*rgba(197, 194, 194, 0.729);*/
-  --navlink_bg: #a9baf2;
+  --main_bg: #def3ff; /*rgba(197, 194, 194, 0.729);*/
+  --navlink_bg: #fff;
 }
 
 .highlight {

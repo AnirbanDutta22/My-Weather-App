@@ -1,30 +1,25 @@
 import moment from "moment";
-import { useContext } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useWeather2 } from "../../contexts/WeatherContext";
 import { iconForWeather } from "../../services/weatherServices";
 import utils from "../../styles/utilities.module.css";
 import ids from "../../styles/weather/forecast.module.css";
 import classes from "../../styles/weather/rightbar.module.css";
 import SearchBar from "../SearchBar";
 import Template from "../Template";
-import { ContextCity2, ContextCityList } from "../WeatherPage";
 import SubForecast from "../WeatherSection/SubForecast";
 import WeatherDisplay from "../WeatherSection/WeatherDisplay";
 import WeekForecast from "../WeatherSection/WeekForecast";
 
 export default function Cities() {
-  const [setCity, setCity2] = useOutletContext();
-  const city2Weather = useContext(ContextCity2);
-  const { city2List } = useContext(ContextCityList);
-
+  const { cityWeather, setCity, cityList } = useWeather2();
   return (
     <Template
       left={
         <>
-          <SearchBar setCity={setCity2} />
+          <SearchBar setCity={setCity} />
           <div className="border">
             <div className={utils.flexbox}>
-              {city2List.slice(0, 3).map((items) => (
+              {cityList.slice(0, 3).map((items, ind) => (
                 <WeatherDisplay
                   flexd="row"
                   align="center"
@@ -40,6 +35,7 @@ export default function Cities() {
                   description={`${moment(items.dt).format("HH:mm a")}`}
                   img={`${iconForWeather(items.icon)}`}
                   temp={`${items.temp.toFixed()}`}
+                  key={ind}
                 />
               ))}
             </div>
@@ -49,24 +45,24 @@ export default function Cities() {
       right={
         <>
           <WeatherDisplay
-            name={`${city2Weather.name}`}
-            description={`${city2Weather.description}`}
-            img={`${iconForWeather(city2Weather.icon)}`}
-            temp={`${city2Weather.temp.toFixed()}`}
+            name={`${cityWeather.name}`}
+            description={`${cityWeather.description}`}
+            img={`${iconForWeather(cityWeather.icon)}`}
+            temp={`${cityWeather.temp.toFixed()}`}
           />
           <div className={ids.forecast}>
             <p>
               <span className="highlight">today's </span>forecast
             </p>
             <div className={ids.subforecast}>
-              {city2Weather.list.slice(0, 3).map((items) => (
-                <>
+              {cityWeather.list.slice(0, 3).map((items, ind) => (
+                <div key={ind}>
                   <SubForecast
                     time={`${moment(items.time).format("hh:mm a")}`}
                     img={`${iconForWeather(items.icon)}`}
                     temp={`${items.temp.toFixed()}`}
                   />
-                </>
+                </div>
               ))}
             </div>
           </div>
@@ -74,15 +70,15 @@ export default function Cities() {
             <p>
               <span className="highlight">3 days </span>forecast
             </p>
-            {city2Weather.listForWeek.slice(0, 3).map((items) => (
-              <>
+            {cityWeather.listForWeek.slice(0, 3).map((items, ind) => (
+              <div key={ind}>
                 <WeekForecast
                   description={`${items.des}`}
                   temp={`${items.temp.toFixed()}`}
                   dayName={`${moment(items.time).format("ddd")}`}
                   img={`${iconForWeather(items.icon)}`}
                 />
-              </>
+              </div>
             ))}
           </div>
         </>
