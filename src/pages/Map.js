@@ -1,10 +1,10 @@
 import moment from "moment";
-import { useWeather3 } from "../../contexts/WeatherContext";
-import { iconForWeather } from "../../services/weatherServices";
-import SearchBar from "../SearchBar";
-import Template from "../Template";
-import WeatherDisplay from "../WeatherSection/WeatherDisplay";
-import MapContainer from "./MapContainer";
+import MapContainer from "../components/Map Section/MapContainer";
+import SearchBar from "../components/SearchBar";
+import Template from "../components/Template";
+import WeatherDisplay from "../components/WeatherSection/WeatherDisplay";
+import { useWeather3 } from "../contexts/WeatherContext";
+import { iconForWeather } from "../services/weatherServices";
 export default function Map() {
   const { cityWeather, setCity, cityList } = useWeather3();
 

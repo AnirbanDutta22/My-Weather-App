@@ -1,14 +1,14 @@
 import moment from "moment";
-import { useWeather2 } from "../../contexts/WeatherContext";
-import { iconForWeather } from "../../services/weatherServices";
 import utils from "../../styles/utilities.module.css";
 import ids from "../../styles/weather/forecast.module.css";
 import classes from "../../styles/weather/rightbar.module.css";
-import SearchBar from "../SearchBar";
-import Template from "../Template";
-import SubForecast from "../WeatherSection/SubForecast";
-import WeatherDisplay from "../WeatherSection/WeatherDisplay";
-import WeekForecast from "../WeatherSection/WeekForecast";
+import SearchBar from "../components/SearchBar";
+import Template from "../components/Template";
+import SubForecast from "../components/WeatherSection/SubForecast";
+import WeatherDisplay from "../components/WeatherSection/WeatherDisplay";
+import WeekForecast from "../components/WeatherSection/WeekForecast";
+import { useWeather2 } from "../contexts/WeatherContext";
+import { iconForWeather } from "../services/weatherServices";
 
 export default function Cities() {
   const { cityWeather, setCity, cityList } = useWeather2();

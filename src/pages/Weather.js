@@ -1,13 +1,13 @@
-import { useWeather1 } from "../../contexts/WeatherContext";
-import { iconForWeather } from "../../services/weatherServices";
 import utils from "../../styles/utilities.module.css";
 import classes from "../../styles/weather/weather.module.css";
-import SearchBar from "../SearchBar";
-import Template from "../Template";
-import ForecastDisplay from "./ForecastDisplay";
-import RightBar from "./RightBar";
-import WeatherDisplay from "./WeatherDisplay";
-import WeatherInfo from "./WeatherInfo";
+import SearchBar from "../components/SearchBar";
+import Template from "../components/Template";
+import ForecastDisplay from "../components/WeatherSection/ForecastDisplay";
+import RightBar from "../components/WeatherSection/RightBar";
+import WeatherDisplay from "../components/WeatherSection/WeatherDisplay";
+import WeatherInfo from "../components/WeatherSection/WeatherInfo";
+import { useWeather1 } from "../contexts/WeatherContext";
+import { iconForWeather } from "../services/weatherServices";
 
 export default function Weather() {
   const { cityWeather, setCity } = useWeather1();

@@ -5,18 +5,18 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import { useAuth } from "../contexts/AuthContext";
 import "../styles/global.css";
-import Cities from "./CitiesSection/Cities";
-import Map from "./MapSection/Map";
-import Settings from "./SettingsSection/Settings";
-import Dashboard from "./UserSection/Dashboard";
-import SignIn from "./UserSection/SignIn";
-import SignUp from "./UserSection/SignUp";
-import User from "./UserSection/User";
-import WeatherPage from "./WeatherPage";
-import Weather from "./WeatherSection/Weather";
-import Welcome from "./Welcome";
+import WeatherPage from "./components/WeatherPage";
+import { useAuth } from "./contexts/AuthContext";
+import Cities from "./pages/Cities";
+import Dashboard from "./pages/Dashboard";
+import Map from "./pages/Map";
+import Settings from "./pages/Settings";
+import SignIn from "./pages/SignIn";
+import SignUp from "./pages/SignUp";
+import User from "./pages/User";
+import Weather from "./pages/Weather";
+import Welcome from "./pages/Welcome";
 
 export const MyContext = React.createContext();
 export default function App() {

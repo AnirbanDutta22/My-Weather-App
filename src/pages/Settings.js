@@ -1,5 +1,5 @@
-import Template from "../Template";
-import MainSettings from "./MainSettings";
+import MainSettings from "../components/Settings Section/MainSettings";
+import Template from "../components/Template";
 
 export default function Settings() {
   return (

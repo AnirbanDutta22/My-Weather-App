@@ -1,12 +1,12 @@
 import signImg from "../../assets/images/signImg3.png";
 import classes from "../../styles/useraccount/signup.module.css";
-import SignInForm from "../SignInForm";
+import SignUpForm from "../components/Sign Section/SignUpForm";
 
 export default function SignUp() {
   return (
     <div className={classes.container}>
       <div className={classes.subContainer}>
-        <SignInForm />
+        <SignUpForm />
         <div className={classes.imgClass}>
           <img src={signImg} alt="" />
         </div>

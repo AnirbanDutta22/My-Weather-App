@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import logo from "../assets/images/welcomeImage4.png";
+import MainBtn from "../components/MainBtn";
 import { useAuth } from "../contexts/AuthContext";
 import ids from "../styles/welcome.module.css";
-import MainBtn from "./MainBtn";
 
 export default function Welcome() {
   const { currentUser } = useAuth();
