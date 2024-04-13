@@ -1,6 +1,6 @@
-import signImg from "../../assets/images/signImg3.png";
-import classes from "../../styles/useraccount/signup.module.css";
+import signImg from "../assets/images/signImg3.png";
 import SignUpForm from "../components/Sign Section/SignUpForm";
+import classes from "../styles/useraccount/signup.module.css";
 
 export default function SignUp() {
   return (

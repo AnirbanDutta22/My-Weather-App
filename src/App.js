@@ -5,7 +5,6 @@ import {
   BrowserRouter as Router,
   Routes,
 } from "react-router-dom";
-import "../styles/global.css";
 import WeatherPage from "./components/WeatherPage";
 import { useAuth } from "./contexts/AuthContext";
 import Cities from "./pages/Cities";
@@ -17,6 +16,7 @@ import SignUp from "./pages/SignUp";
 import User from "./pages/User";
 import Weather from "./pages/Weather";
 import Welcome from "./pages/Welcome";
+import "./styles/global.css";
 
 export const MyContext = React.createContext();
 export default function App() {

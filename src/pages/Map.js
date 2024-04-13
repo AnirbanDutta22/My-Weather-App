@@ -2,7 +2,7 @@ import moment from "moment";
 import MapContainer from "../components/Map Section/MapContainer";
 import SearchBar from "../components/SearchBar";
 import Template from "../components/Template";
-import WeatherDisplay from "../components/WeatherSection/WeatherDisplay";
+import WeatherDisplay from "../components/Weather Section/WeatherDisplay";
 import { useWeather3 } from "../contexts/WeatherContext";
 import { iconForWeather } from "../services/weatherServices";
 export default function Map() {

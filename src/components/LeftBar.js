@@ -1,7 +1,6 @@
 import welcomeIcon from "../assets/images/welcomeImage4.png";
 import { useAuth } from "../contexts/AuthContext";
 import classes from "../styles/leftbar.module.css";
-import utils from "../styles/utilities.module.css";
 import NavItem from "./NavItem";
 import { Logo } from "./styled/Logo.styled";
 
@@ -9,7 +8,7 @@ export default function LeftBar() {
   const { currentUser } = useAuth();
 
   return (
-    <div className={`${classes.leftBox} ${utils.flexbox}`}>
+    <div className={`${classes.leftBox}`}>
       <div className={classes.subLeftBox1}>
         <Logo to={currentUser ? "/dashboard" : "/"}>
           <img src={welcomeIcon} alt="welcome" />

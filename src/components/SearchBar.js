@@ -15,7 +15,7 @@ export default function SearchBar({ setCity }) {
   };
 
   return (
-    <div className={`${classes.searchBox} ${utils.flexbox}`}>
+    <div className={`${utils.flexbox} ${classes.searchBox}`}>
       <input
         type="text"
         placeholder="Search for cities"

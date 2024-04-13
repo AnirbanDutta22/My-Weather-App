@@ -1,6 +1,6 @@
 .searchBox {
   border-radius: 16px;
-  height: max-content;
+  height: max-content !important;
 }
 .searchBox input {
   width: 100%;
